@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: wheat;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dice_container {
+  margin-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.title {
+  color: red;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.dice_wrap {
+  margin: 0 50px;
+}
+
+.dice {
+  width: 101px;
+  height: 101px;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.dice.active {
+  -webkit-animation: rotateDice 1s linear 3;
+          animation: rotateDice 1s linear 3;
+}
+
+.dice .dice_face {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.93);
+}
+
+.dice .dice_face .dots1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 1px 1px 12px #fff, inset -1px -1px 12px #000;
+          box-shadow: inset 1px 1px 12px #fff, inset -1px -1px 12px #000;
+}
+
+.dice .dice_face .dots_wrap {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dice .dice_face .dots {
+  width: 25px;
+  height: 25px;
+  background-color: red;
+  border-radius: 50%;
+  -webkit-box-shadow: inset .3px .3px 10px #fff, inset -0.3px -0.3px 10px #000;
+          box-shadow: inset .3px .3px 10px #fff, inset -0.3px -0.3px 10px #000;
+}
+
+.dice .dice_face:nth-child(1) {
+  -webkit-transform: translateZ(50px);
+          transform: translateZ(50px);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dice .dice_face:nth-child(2) {
+  -webkit-transform: rotateY(90deg) translateZ(50px);
+          transform: rotateY(90deg) translateZ(50px);
+}
+
+.dice .dice_face:nth-child(2) .dots_wrap {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+
+.dice .dice_face:nth-child(3) {
+  -webkit-transform: rotateY(180deg) translateZ(50px);
+          transform: rotateY(180deg) translateZ(50px);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dice .dice_face:nth-child(3) .dots_wrap {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dice .dice_face:nth-child(4) {
+  -webkit-transform: rotateY(-90deg) translateZ(50px);
+          transform: rotateY(-90deg) translateZ(50px);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dice .dice_face:nth-child(4) .dots_wrap {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dice .dice_face:nth-child(5) {
+  -webkit-transform: rotateX(-90deg) translateZ(50px);
+          transform: rotateX(-90deg) translateZ(50px);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dice .dice_face:nth-child(5) .dots_wrap {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dice .dice_face:nth-child(6) {
+  -webkit-transform: rotateX(90deg) translateZ(50px);
+          transform: rotateX(90deg) translateZ(50px);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dice .dice_face:nth-child(6) .dots_wrap {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.point {
+  margin-top: 5rem;
+  text-align: center;
+  color: red;
+}
+
+.rotate_btn {
+  margin-top: 3rem;
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 5rem;
+  background-color: red;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+}
+
+.rotate_btn.disabled {
+  display: none;
+}
+
+.rotate_btn:hover {
+  background-color: green;
+}
+
+.rotate_btn:active {
+  -webkit-box-shadow: inset 0px 0px 10px #000;
+          box-shadow: inset 0px 0px 10px #000;
+}
+
+.history_container {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 150px;
+  height: 300px;
+  border: 1px solid #000;
+  overflow-y: scroll;
+}
+
+.history_container .history_title {
+  color: red;
+  text-align: center;
+}
+
+.history_container .history {
+  padding-left: 1.1rem;
+}
+
+.history_container .history ul li {
+  list-style-type: decimal;
+}
+
+@media screen and (max-width: 992px) {
+  .dice_wrap {
+    margin: 0 16px;
+  }
+  .dice {
+    width: 70px;
+    height: 70px;
+  }
+  .dice .dice_face .dots1 {
+    width: 25px;
+    height: 25px;
+    -webkit-box-shadow: inset .3px .3px 5px #fff, inset -0.3px -0.3px 5px #000;
+            box-shadow: inset .3px .3px 5px #fff, inset -0.3px -0.3px 5px #000;
+  }
+  .dice .dice_face .dots {
+    width: 16px;
+    height: 16px;
+    background-color: red;
+    border-radius: 50%;
+    -webkit-box-shadow: inset .3px .3px 5px #fff, inset -0.3px -0.3px 5px #000;
+            box-shadow: inset .3px .3px 5px #fff, inset -0.3px -0.3px 5px #000;
+  }
+  .dice .dice_face:nth-child(1) {
+    -webkit-transform: translateZ(35px);
+            transform: translateZ(35px);
+  }
+  .dice .dice_face:nth-child(2) {
+    -webkit-transform: rotateY(90deg) translateZ(35px);
+            transform: rotateY(90deg) translateZ(35px);
+  }
+  .dice .dice_face:nth-child(3) {
+    -webkit-transform: rotateY(180deg) translateZ(35px);
+            transform: rotateY(180deg) translateZ(35px);
+  }
+  .dice .dice_face:nth-child(4) {
+    -webkit-transform: rotateY(-90deg) translateZ(35px);
+            transform: rotateY(-90deg) translateZ(35px);
+  }
+  .dice .dice_face:nth-child(5) {
+    -webkit-transform: rotateX(-90deg) translateZ(35px);
+            transform: rotateX(-90deg) translateZ(35px);
+  }
+  .dice .dice_face:nth-child(6) {
+    -webkit-transform: rotateX(90deg) translateZ(35px);
+            transform: rotateX(90deg) translateZ(35px);
+  }
+  .history_container {
+    top: 100%;
+    right: 50%;
+    width: 300px;
+    height: 100px;
+    -webkit-transform: translate(50%, -100%);
+            transform: translate(50%, -100%);
+  }
+}
+
+@-webkit-keyframes rotateDice {
+  from {
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(-720deg) rotateY(720deg) rotateZ(360deg);
+            transform: rotateX(-720deg) rotateY(720deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateDice {
+  from {
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(-720deg) rotateY(720deg) rotateZ(360deg);
+            transform: rotateX(-720deg) rotateY(720deg) rotateZ(360deg);
+  }
+}
+/*# sourceMappingURL=style.css.map */
