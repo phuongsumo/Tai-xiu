@@ -301,8 +301,8 @@ body {
     right: 50%;
     width: 300px;
     height: 100px;
-    -webkit-transform: translate(50%, -100%);
-            transform: translate(50%, -100%);
+    -webkit-transform: translate(50%, -110%);
+            transform: translate(50%, -110%);
   }
 }
 
